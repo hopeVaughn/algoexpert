@@ -14,8 +14,8 @@ Once the array is sorted then we have one pointer at the start of the array and 
 result of the operation (left + right) is less then the targetSum then left++. Transversely if the result of the operation
 (left + right) is greater then the targetSum then right--
   */
-  const arr = array.sort();
-  // console.log(arr);
+  const arr = array.sort((a, b) => a - b);
+  console.log(arr);
   let left = 0,
     right = arr.length - 1;
   while (left < right) {
@@ -35,7 +35,7 @@ result of the operation (left + right) is less then the targetSum then left++. T
 
 
 
-console.log(twoNumberSum([2, 1, -6, -9, 4], 6)); // [2,4]
+// console.log(twoNumberSum([2, 1, -6, -9, 4], 6)); // [2,4]
 console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10)); // [11,-1]
 
 // time complexity: O(n log(n))
