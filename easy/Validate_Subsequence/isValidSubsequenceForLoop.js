@@ -15,8 +15,13 @@ const array = [5, 1, 22, 25, 6, -1, 8, 10]
 const sequence = [1, 6, -1, 10]
 
 function isValidSubsequence(array, sequence) {
-  // establish pointer for the sequence array
-  let subEle = 0
+  let seqIdx = 0;
+  for (const value of array) {
+    if (value === sequence[seqIdx]) seqIdx++;
+    if (seqIdx === sequence.length) return true;
+  }
+
+  return false;
 }
 
 console.log(isValidSubsequence(array, sequence));
