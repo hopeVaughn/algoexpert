@@ -1,7 +1,7 @@
 /*
 Write a function that takes in a non-empty array of integers that are sorted in ascending order and returns a new array of the same length with the squares of the original integers also sorted in ascending order.
 
-Tip: While the integers in the input array are sorted in increasing order, their squares won't necessarily be as well, because of the possible presence /home/labber/lighthouse/algoexpert/easy/Validate_Subsequenceof negative numbers
+Tip: While the integers in the input array are sorted in increasing order, their squares won't necessarily be as well, because of the possible presence negative numbers
 
 Sample input:
 array = [1,2,3,4,5,6,8,9]
