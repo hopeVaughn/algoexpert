@@ -22,20 +22,29 @@ HTML - 0 points
 C# - 3 points
 Python - 6 points
 */
+
+// by initializing the two below variables as constants outside our main function we are able to reduce the amount of arguments we will need to pass to our helper function and reduce the need for internal variables inside our main function.
 const HOME_TEAM_WON = 1;
 const POINTS = 3;
+
 function tournamentWinner(competitions, results) {
-  // Write your code here.
+  // place holder for output
   let currentBestTeam = "";
+  // initialize obj for optimization and storage of currentBestTeam
   let scores = {
     [currentBestTeam]: 0,
   }
+
   for (let i = 0; i < competitions.length; i++) {
+    // initialize input into two variables
     const [homeTeam, awayTeam] = competitions[i];
+    // initialize result so that it's output is either 0 or 1
     const result = results[i]
 
+    // checks the result of the comparison of the results array to the competitions result and initializes winningTeam as the name of the team that won
     const winningTeam = result === HOME_TEAM_WON ? homeTeam : awayTeam;
 
+    // pass in storage object and winning team result to our helper function in order to update the currentBestTeam
     updateScores(scores, winningTeam);
 
     if (scores[winningTeam] > scores[currentBestTeam]) {
