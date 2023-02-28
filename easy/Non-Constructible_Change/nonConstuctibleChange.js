@@ -41,14 +41,20 @@ If we make it through the entire array then we know the min amount of change tha
 // [1,1,3] can make 1,2,3,4,5 because 1 + 1 = 2 and 3 is not greater then 2 + 1
 
 const coins = [7, 7, 1, 1, 2, 3, 22]
-
+const coins1 = [1, 5, 1, 1, 1, 10, 15, 20, 100]
 function nonConstructibleChange(coins) {
   if (coins.length === 0) return 1
   const coinSort = quickSort(coins);
-  const change = 0;
-  console.log(coinSort);
+  let currentChangeCreated = 0;
+
+  for (let i = 0; i < coinSort.length; i++) {
+    if (coinSort[i] > currentChangeCreated + 1) return currentChangeCreated + 1
+    console.log(currentChangeCreated);
+    currentChangeCreated += coinSort[i]
+  }
+
   // do something
-  // return 1;
+  return currentChangeCreated + 1;
 }
 
 // pivot for quick sort
@@ -81,6 +87,8 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
   }
   return arr
 }
-console.log(nonConstructibleChange(coins));
+
+
+console.log(nonConstructibleChange(coins1));
 // time: O(n log n)
 // space: O(1)
