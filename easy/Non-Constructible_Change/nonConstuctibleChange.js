@@ -32,16 +32,55 @@ it's not so we add it to the current value of change(2) + 2 and change becomes 4
 The next element is 3 and we ask is 3 > the current value of change(4) + 1? It's not so we add it and move forward again.
 
 We repeat this process until we get to 22. At this point the value of change is 19. Because we know that 22 is greater then the current value of change (19) + 1 we have found our minimum amount that CANNOT be produced by the inputs of the array.
+
+If we make it through the entire array then we know the min amount of change that can be make would be the total of change + 1
 */
 
+// is the coin is <= change + 1 we can make all of the change previously and all the of the change between what could make previously and the new coin
+
+// [1,1,3] can make 1,2,3,4,5 because 1 + 1 = 2 and 3 is not greater then 2 + 1
 
 const coins = [7, 7, 1, 1, 2, 3, 22]
 
 function nonConstructibleChange(coins) {
   if (coins.length === 0) return 1
+  const coinSort = quickSort(coins);
   const change = 0;
+  console.log(coinSort);
   // do something
-  return 1;
+  // return 1;
 }
 
+// pivot for quick sort
+function pivot(arr, start = 0, end = arr.length - 1) {
+  const swap = (arr, idx1, idx2) => {
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  }
+
+  let pivot = arr[start];
+  let swapIdx = start;
+
+  for (let i = start + 1; i <= end; i++) {
+    if (pivot > arr[i]) {
+      swapIdx++
+      swap(arr, swapIdx, i);
+    }
+  }
+  swap(arr, start, swapIdx);
+  return swapIdx;
+}
+
+// quicksort
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right)
+    // left
+    quickSort(arr, left, pivotIndex - 1)
+    // right
+    quickSort(arr, pivotIndex + 1, right)
+  }
+  return arr
+}
 console.log(nonConstructibleChange(coins));
+// time: O(n log n)
+// space: O(1)
