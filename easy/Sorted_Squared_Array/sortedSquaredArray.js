@@ -12,6 +12,7 @@ sample output:
 const array = [1, 2, 3, 4, 5, 6, 8, 9]
 const array1 = [-7, -5, -4, 3, 6, 8, 9]
 
+// we first separate the values into two arrays; positive and negative values
 function sortedSquaredArray(array) {
   const positiveSquares = [];
   const negativeSquares = [];
@@ -24,7 +25,8 @@ function sortedSquaredArray(array) {
       positiveSquares.push(square);
     }
   }
-
+  console.log(positiveSquares, negativeSquares);
+  // passed of to our merge function
   return mergeSortedArrays(positiveSquares, negativeSquares);
 }
 
@@ -32,7 +34,7 @@ function mergeSortedArrays(ascendingArray, descendingArray) {
   const mergedArray = [];
   let ascendingIdx = 0;
   let descendingIdx = descendingArray.length - 1;
-
+  // with the arrays separated we can loop through both and pass our pointer values along with the asc/des arrays to our getItemByIdx function
   while (ascendingIdx < ascendingArray.length || descendingIdx >= 0) {
     const ascendingItem = getItemByIdx(ascendingArray, ascendingIdx);
     const descendingItem = getItemByIdx(descendingArray, descendingIdx);
@@ -45,7 +47,7 @@ function mergeSortedArrays(ascendingArray, descendingArray) {
       descendingIdx--;
     }
   }
-
+  // this return value is then returned to our main function as our output
   return mergedArray;
 }
 
@@ -53,4 +55,4 @@ function getItemByIdx(array, idx) {
   return array[idx] === undefined ? Infinity : array[idx];
 }
 
-console.log(sortedSquaredArray(array));
+console.log(sortedSquaredArray(array1));

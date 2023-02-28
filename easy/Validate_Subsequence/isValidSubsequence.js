@@ -18,7 +18,9 @@ function isValidSubsequence(array, sequence) {
   // establish pointer for the sequence array
   let arrIdx = 0;
   let seqIdx = 0;
+  // we want to make sure that we are watching for the completion of both arrays
   while (arrIdx < array.length && seqIdx < sequence.length) {
+    // this check is to make sure the order of the subsequence is in the same order as the array.
     if (array[arrIdx] === sequence[seqIdx]) {
       seqIdx += 1
     }

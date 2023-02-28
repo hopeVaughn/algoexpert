@@ -32,5 +32,5 @@ function sortedSquaredArray(array) {
   return sortedSquares;
 }
 
-console.log(sortedSquaredArray(array));
+console.log(sortedSquaredArray(array1));
 
