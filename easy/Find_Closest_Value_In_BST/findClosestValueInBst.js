@@ -15,12 +15,14 @@ tree =  10
  1        14
 
 target: 12
+
+
 */
 
 function findClosestValueInBst(tree, target) {
   // Write your code here.
   let closest = Infinity;
-
+  console.log(tree);
 }
 
 // This is the class of the input tree. Do not edit.
@@ -43,3 +45,7 @@ root.right.left.right = new BST(14);
 root.right.right = new BST(22);
 
 console.log(findClosestValueInBst(root, 12));
+// average time: O(log(n))
+// worst case time: O(n)  *if we only have one branch in our tree
+// if solved iteratively space: O(1)
+// worst case space: O(n) 
