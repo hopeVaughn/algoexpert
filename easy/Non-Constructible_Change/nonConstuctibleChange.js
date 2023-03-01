@@ -42,6 +42,7 @@ If we make it through the entire array then we know the min amount of change tha
 
 const coins = [7, 7, 1, 1, 2, 3, 22]
 const coins1 = [1, 5, 1, 1, 1, 10, 15, 20, 100]
+
 function nonConstructibleChange(coins) {
   if (coins.length === 0) return 1
   const coinSort = quickSort(coins);
@@ -53,7 +54,6 @@ function nonConstructibleChange(coins) {
     currentChangeCreated += coinSort[i]
   }
 
-  // do something
   return currentChangeCreated + 1;
 }
 
