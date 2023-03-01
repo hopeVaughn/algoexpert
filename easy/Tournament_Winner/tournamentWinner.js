@@ -38,7 +38,6 @@ function tournamentWinner(competitions, results) {
   for (let i = 0; i < competitions.length; i++) {
     // initialize input into two variables
     const [homeTeam, awayTeam] = competitions[i];
-    // initialize result so that it's output is either 0 or 1
     const result = results[i]
 
     // checks the result of the comparison of the results array to the competitions result and initializes winningTeam as the name of the team that won
