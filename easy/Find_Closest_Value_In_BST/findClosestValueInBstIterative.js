@@ -22,7 +22,7 @@ target: 12
 function findClosestValueInBst(tree, target) {
   // Write your code here.
   let closest = Infinity;
-  return findClosestValueInBstHelper(tree, target, closest = Infinity)
+  return findClosestValueInBstHelper(tree, target, closest)
   console.log(tree);
 }
 function findClosestValueInBstHelper(tree, target, closest) {
@@ -31,6 +31,7 @@ function findClosestValueInBstHelper(tree, target, closest) {
     if (Math.abs(target - closest) > Math.abs(target - currentNode.value)) {
       closest = currentNode.value
     }
+
     if (target < currentNode.value) {
       currentNode = currentNode.left
     } else if (target > currentNode.value) {
