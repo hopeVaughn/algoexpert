@@ -66,3 +66,6 @@ class BinaryTreeInit extends BinaryTree {
 const tree = new BinaryTreeInit(1).insert([2, 3, 4, 5, 6, 7, 8, 9, 10]);
 // test cases
 console.log(branchSums(tree));
+
+// time: O(n) n being each node traversed in the binary tree. At every node we are doing constant time operations
+// space: O(n)
