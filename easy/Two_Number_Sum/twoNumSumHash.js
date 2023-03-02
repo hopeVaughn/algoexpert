@@ -9,8 +9,7 @@ You can assume that there will be at most one pair of numbers summing up to the 
 /*
 x + y = targetSum || y = targetSum - x
 loop through the array and preform targetSum - x. Then check to see if my obj contains the result. 
-If not then add the value of the result of that operation 'obj[targetSum - x]' with the key of 'true'
-obj[targetSum - x]: true
+If not then add the value of the result of that operation 'obj[targetSum - x]' with the key of 'true' i.e obj[targetSum - x]: true
 
 If the value of targetSum - x is present in the object then return the current iteration (x) with the key of the object (obj[y])
 i.e return [x,obj[y]]

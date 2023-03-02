@@ -6,14 +6,14 @@ Note that the target sum has to be obtained by summing two different integers in
 You can assume that there will be at most one pair of numbers summing up to the target sum.
 */
 
-
-function twoNumberSum(array, targetSum) {
-  /*
+/*
 If we sort the array first then we don't need to use a hash table and we can use the two pointer technique.
 Once the array is sorted then we have one pointer at the start of the array and one at the end. If the resulting
 result of the operation (left + right) is less then the targetSum then left++. Transversely if the result of the operation
 (left + right) is greater then the targetSum then right--
-  */
+*/
+
+function twoNumberSum(array, targetSum) {
   const arr = array.sort((a, b) => a - b);
   console.log(arr);
   let left = 0,
