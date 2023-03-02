@@ -6,18 +6,17 @@ Note that the target sum has to be obtained by summing two different integers in
 You can assume that there will be at most one pair of numbers summing up to the target sum.
 */
 
+/*
+x + y = targetSum || y = targetSum - x
+loop through the array and preform targetSum - x. Then check to see if my obj contains the result. 
+If not then add the value of the result of that operation 'obj[targetSum - x]' with the key of 'true'
+obj[targetSum - x]: true
+
+If the value of targetSum - x is present in the object then return the current iteration (x) with the key of the object (obj[y])
+i.e return [x,obj[y]]
+*/
 
 function twoNumberSum(array, targetSum) {
-  /*
-  x + y = targetSum || y = targetSum - x
-  loop through the array and preform targetSum - x. Then check to see if my obj contains the result. 
-  If not then add the value of the result of that operation 'obj[targetSum - x]' with the key of 'true'
-  obj[targetSum - x]: true
-
-  If the value of targetSum - x is present in the object then return the current iteration (x) with the key of the object (obj[y])
-  i.e return [x,obj[y]]
-  */
-
   // Empty hash for checking
   let nums = {};
   for (let i = 0; i < array.length; i++) {
