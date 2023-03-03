@@ -36,9 +36,11 @@ class BinaryTree {
 }
 
 
-function nodeDepths(root) {
+function nodeDepths(root, depth = 0) {
+  // handle base case of recursion 
+  if (!root) return 0
+  return depth + nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1)
 
-  console.log(root.left.value);
 }
 
 // initialize the tree
@@ -54,3 +56,6 @@ root.right.right = new BinaryTree(7);
 
 //test cases
 console.log(nodeDepths(root));
+
+// time complexity: O(n)    where n = the number of nodes found in the tree
+// space complexity: O(h)  where h = the height of the binary tree

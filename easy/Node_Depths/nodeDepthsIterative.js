@@ -37,10 +37,32 @@ class BinaryTree {
 
 
 function nodeDepths(root) {
-  console.log(root.left.value);
+  let sumOfDepths = 0;
+  const stack = [root]
+  const depths = [0]
+
+  while (stack.length > 0) {
+    const node = stack.pop();
+    const depth = depths.pop()
+
+    sumOfDepths += depth;
+
+    if (node.left) {
+      stack.push(node.left);
+      depths.push(depth + 1);
+    }
+    if (node.right) {
+      stack.push(node.right);
+      depths.push(depth + 1);
+    }
+
+  }
+  return sumOfDepths
 }
 
 // initialize the tree
+
+
 const root = new BinaryTree(1);
 root.left = new BinaryTree(2);
 root.left.left = new BinaryTree(4);
@@ -53,3 +75,6 @@ root.right.right = new BinaryTree(7);
 
 //test cases
 console.log(nodeDepths(root));
+
+// time complexity: O(n)    where n = the number of nodes found in the tree
+// space complexity: O(h)   where h = the height of the binary tree
