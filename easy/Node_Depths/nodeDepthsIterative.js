@@ -24,6 +24,8 @@ Etc....
 Summing all of these depths yields 16
 */
 
+// this approach will use a stack to track the depth of each node.
+
 // This is the class of the input binary tree.
 class BinaryTree {
   constructor (value) {
@@ -35,7 +37,7 @@ class BinaryTree {
 
 
 function nodeDepths(root) {
-  console.log(root);
+  console.log(root.left.value);
 }
 
 // initialize the tree
