@@ -33,7 +33,12 @@ class Node {
 
   depthFirstSearch(array) {
     // Write your code here.
-    console.log(array);
+    array.push(this.name);
+
+    for (const child of this.children) {
+      child.depthFirstSearch(array)
+    }
+    return array
   }
 }
 
@@ -44,4 +49,7 @@ graph.children[2].addChild('G').addChild('H');
 graph.children[0].children[1].addChild('I').addChild('J');
 graph.children[2].children[0].addChild('K');
 
-console.log(graph);
+console.log(graph.depthFirstSearch([]));
+
+// time: O(|V| + |E|) where V is the number of vertices (or nodes in the graph) and E is the number of edges
+// space: O(|V|) where V is the number if vertices
