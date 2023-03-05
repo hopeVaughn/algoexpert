@@ -7,21 +7,21 @@ const array = [8,5,2,9,5,6,3]
 Sample Output: [2,3,5,5,6,8,9]
 */
 const array = [8, 5, 2, 9, 5, 6, 3]
-function bubbleSort(arr) {
+function bubbleSort(array) {
   let noSwaps;
-  for (let i = arr.length; i > 0; i--) {
+  for (let i = array.length; i > 0; i--) {
     noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1]
-        arr[j + 1] = temp;
+      if (array[j] > array[j + 1]) {
+        let temp = array[j];
+        array[j] = array[j + 1]
+        array[j + 1] = temp;
         noSwaps = false
       }
     }
     if (noSwaps) break
   }
-  return arr
+  return array
 }
 
 console.log(bubbleSort(array));
