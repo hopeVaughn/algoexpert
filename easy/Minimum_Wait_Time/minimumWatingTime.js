@@ -16,7 +16,15 @@ Sample output: 17
 let queries = [3, 2, 1, 2, 6];
 
 function minimumWaitingTime(queries) {
-  console.log(queries);
+  queries.sort((a, b) => a - b)
+  let waitingTime = 0;
+  for (let i = 0; i < queries.length; ++i) {
+    queriesLeft = queries.length - (i + 1);
+    waitingTime += queries[i] * queriesLeft;
+  }
+  return waitingTime;
 }
 
 console.log(minimumWaitingTime(queries));
+// time: O(n log n) where n is the number of queries or the length of the input array
+// space: O(1) because we will sort the array in place
